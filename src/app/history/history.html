@@ -1,0 +1,40 @@
+<div class="history-container">
+  <h2>Game History</h2>
+
+  <button class="clear-btn" (click)="clearHistory()" *ngIf="games.length">Clear All</button>
+
+  <div *ngIf="!games.length" class="empty-message">
+    No games played yet.
+  </div>
+
+  <div *ngFor="let game of games; let i = index" class="history-card">
+    <div class="pattern-header">
+      <img [src]="game.pattern.imgUrl" [alt]="game.pattern.name" class="pattern-img" />
+      <span class="pattern-name">{{ game.pattern.name }}</span>
+    </div>
+    <div class="game-detail-row">
+      <span>Start:</span>
+      <span>{{ game.startDate | date:'medium' }}</span>
+    </div>
+    <div class="game-detail-row">
+      <span>Completed:</span>
+      <span>{{ game.completionDate | date:'medium' }}</span>
+    </div>
+    <div class="game-detail-row">
+      <span>Last Called Number:</span>
+      <span *ngIf="game.lastCalledNumber">
+        <strong>{{ game.lastCalledNumber.letter }}</strong>
+        {{ game.lastCalledNumber.number }}
+      </span>
+      <span *ngIf="!game.lastCalledNumber">N/A</span>
+    </div>
+    <div class="game-detail-row numbers-row">
+      <span>Numbers:</span>
+      <span class="numbers-list">
+        <ng-container *ngFor="let num of game.selectedNumbers">
+          <span class="num-chip">{{ num.letter }}-{{ num.number }}</span>
+        </ng-container>
+      </span>
+    </div>
+  </div>
+</div>

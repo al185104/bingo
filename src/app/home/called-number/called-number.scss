@@ -1,0 +1,81 @@
+.called-number-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; // centers the card vertically in the column
+  position: relative;
+  z-index: 1;
+}
+
+.called-number-box {
+  background: #fff;
+  border-radius: 1.1em;
+  box-shadow: 0 8px 32px #22223b1c, 0 1.5px 8px #9a8c9814;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.2rem 2.5rem 2rem 2.5rem;
+  min-width: 220px;
+  max-width: 100%;
+  min-height: 180px;
+  margin: 0 auto;
+  transform: translateY(-24px);
+  transition: box-shadow 0.22s;
+
+  .called-letter {
+    font-family: 'Inter', 'Roboto', Arial, sans-serif;
+    font-size: 7rem;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    background-color: #22223b1c;
+    color: var(--primary);
+    letter-spacing: 0.07em;
+    margin-bottom: 0.4em;
+    text-transform: uppercase;
+    opacity: 0.78;
+  }
+
+  .called-number {
+    font-family: 'Roboto Mono', 'Inter', Arial, sans-serif;
+    font-size: 18rem;
+    font-weight: 900;
+    color: var(--primary);
+    letter-spacing: 0.08em;
+    margin: 0;
+    line-height: 1;
+    will-change: transform, opacity;
+    // animation handled by Angular Animations, no keyframes needed here
+    animation: bottleShake 5.7s 4s infinite cubic-bezier(.42,2.4,.48,.91);
+  }
+}
+
+@keyframes bottleShake {
+  0%, 100% { transform: rotate(0deg); }
+  10% { transform: rotate(-7deg); }
+  20% { transform: rotate(7deg); }
+  28% { transform: rotate(-6deg); }
+  36% { transform: rotate(6deg); }
+  44% { transform: rotate(-3deg); }
+  52% { transform: rotate(3deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@media (max-width: 900px) {
+  .called-number-box {
+    border-radius: 0.6em;
+    padding: 1rem 1.3rem 1rem 1.3rem;
+    min-width: 120px;
+    min-height: 90px;
+    .called-letter {
+      font-size: 1.4rem;
+    }
+    .called-number {
+      font-size: 3.3rem;
+    }
+  }
+}

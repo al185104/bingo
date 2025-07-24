@@ -1,0 +1,94 @@
+// winning-pattern.scss
+
+.winning-pattern-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;   // vertical centering in the column
+  justify-content: flex-start; // left align in grid
+}
+
+.pattern-card {
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 2rem 2.5rem 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 240px;
+  max-width: 100%;
+  margin: 0 auto;
+  font-family: 'Inter', 'Roboto', Arial, sans-serif;
+}
+
+.pattern-card h2 {
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.02em;
+  margin: 0 0 1.2rem 0;
+  font-family: inherit;
+}
+
+.pattern-img {
+  max-width: 340px;
+  max-height: 340px;
+  width: 100vw;
+  height: 100vw;
+  min-width: 170px;
+  min-height: 170px;
+  margin-bottom: 1.5rem;
+  background: var(--bg);
+  border-radius: 0.6em;
+  box-shadow: 0 8px 32px #4a4e6940, 0 0.5px 2px #9a8c9822;
+  display: block;
+  object-fit: contain;
+}
+
+.pattern-controls {
+  display: flex;
+  gap: 1.1rem;
+  margin-top: 0.2rem;
+
+  button {
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'Inter', 'Roboto', Arial, sans-serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    border-radius: 0.4em;
+    padding: 0.3em 1.25em;
+    box-shadow: 0 2px 6px #4a4e6922;
+    cursor: pointer;
+    transition: background 0.15s, box-shadow 0.15s, color 0.15s;
+
+    &:hover,
+    &:focus {
+      background: var(--primary);
+      color: #fff;
+      outline: none;
+      box-shadow: 0 4px 14px #22223b22;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .pattern-card {
+    padding: 1.2rem 1.1rem 1.2rem 1.1rem;
+    min-width: 140px;
+    max-width: 96vw;
+    .pattern-img {
+      max-width: 95vw;
+      max-height: 40vw;
+      width: 95vw;
+      height: 40vw;
+      min-width: 110px;
+      min-height: 80px;
+    }
+    h2 {
+      font-size: 1.05rem;
+    }
+  }
+}

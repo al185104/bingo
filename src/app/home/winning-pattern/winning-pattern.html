@@ -1,0 +1,10 @@
+<div class="winning-pattern-wrapper">
+  <div class="pattern-card">
+      <h2>{{ pattern.name }}</h2>
+    <img [src]="pattern.imgUrl" alt="Pattern" class="pattern-img"/>
+    <div class="pattern-controls">
+      <button (click)="prevPattern()">&lt;</button>
+      <button (click)="nextPattern()">&gt;</button>
+    </div>
+  </div>
+</div>

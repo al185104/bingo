@@ -1,0 +1,10 @@
+    <div class="numbers-table">
+      <div class="numbers-column" *ngFor="let letter of letters; let i = index">
+        <div class="letter">{{ letter }}</div>
+        <button
+          *ngFor="let num of getNumbersForLetter(i)"
+          (click)="selectNumber(num, letter)"
+          [class.active]="isCalled(num)"
+        >{{ num }}</button>
+      </div>
+    </div>

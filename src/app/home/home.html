@@ -1,0 +1,57 @@
+    <!-- <div class="home-grid">
+      <app-winning-pattern
+        [pattern]="currentPattern"
+        (patternChange)="onPatternChange($event)">
+      </app-winning-pattern>
+
+      <app-called-number
+        [letter]="currentLetter"
+        [number]="calledNumber">
+      </app-called-number>
+
+      <app-list-of-numbers
+        [calledNumber]="calledNumber"
+        (numberSelected)="onNumberSelected($event)">
+      </app-list-of-numbers>
+
+      <button
+        class="save-game-btn"
+        [disabled]="selectedNumbers.length === 0"
+        (click)="completeGame()"
+      >
+        Save Game
+      </button>
+    </div>
+    <div *ngIf="saveSuccess" class="save-success">
+  Game saved!
+</div> -->
+
+<div class="home-grid">
+  <app-winning-pattern
+    [pattern]="currentPattern"
+    (patternChange)="onPatternChange($event)">
+  </app-winning-pattern>
+
+  <app-called-number
+    [letter]="currentLetter"
+    [number]="calledNumber">
+  </app-called-number>
+
+  <app-list-of-numbers
+    [calledNumber]="calledNumber"
+    (numberSelected)="onNumberSelected($event)">
+  </app-list-of-numbers>
+</div>
+
+<div class="save-btn-container">
+  <button
+    class="save-game-btn"
+    [disabled]="!hasSelectedNumbers"
+    (click)="completeGame()"
+  >
+    Save Game
+  </button>
+  <div *ngIf="saveSuccess" class="save-success">
+    Game saved!
+  </div>
+</div>

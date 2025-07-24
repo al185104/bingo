@@ -1,0 +1,11 @@
+<div class="called-number-wrapper">
+  <div class="called-number-box">
+    <div class="called-letter">{{ letter }}</div>
+    <div
+      class="called-number"
+      [@popInTrigger]="number"
+    >
+      {{ number ?? '-' }}
+    </div>
+  </div>
+</div>
